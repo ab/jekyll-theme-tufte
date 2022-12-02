@@ -1,10 +1,16 @@
 # jekyll-theme-tufte
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
+## [tufte-css](https://github.com/edwardtufte/tufte-css) wrapped in a comfy Jekyll theme
 
-To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
+*jekyll-theme-tufte* aims to closely mimic the [Edward Tufte](https://www.edwardtufte.com/tufte/)-inspired styles from [*tufte-css*](https://github.com/edwardtufte/tufte-css) ([MIT License](https://github.com/edwardtufte/tufte-css/blob/gh-pages/LICENSE)) in the framework of a [Jekyll](http://jekyllrb.com/) theme for satic pages and blog posts.
 
-TODO: Delete this and the text above, and describe your gem
+This is a gem-style theme packaging of the [tufte-css-jekyll](https://github.com/sdruskat/tufte-css-jekyll) classic-style theme, with some minor modifications. Gem-style themes are easier to work with since they don't pollute your main Jekyll folder structure.
+
+The theme is based heavily on previous work by [Clay Harmon](http://www.clayharmon.com/), who provides [*tufte-jekyll*](https://github.com/clayh53/tufte-jekyll) ([MIT License](https://github.com/clayh53/tufte-jekyll/blob/master/LICENSE)) which also draws heavily on *tufte-css*, albeit with some stylistical deviations. In comparison, *tufte-css-jekyll* tries to stay as true to *tufte-css* as possible.
+
+## Demo page
+
+A demo-page can be found at [sdruskat.github.io/tufte-css-jekyll/](https://sdruskat.github.io/tufte-css-jekyll/). The page ["Tufte CSS"](https://sdruskat.github.io/tufte-css-jekyll/page/) on this site aims to reproduce the [*tufte-css* demo page](https://edwardtufte.github.io/tufte-css/).
 
 ## Installation
 
@@ -30,13 +36,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
+If you are new to Jekyll, check out the [Jekyll documentation](https://jekyllrb.com/docs/home/) first.
+
+### Some theme specifics
+
+- The **large site title (and subtitle)** can be switched on/off by setting the value for `header` in `_config.yml` to false.
+
+- The **order of pages** in the menu can be determined by defining a `weight` for the pages.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/jekyll-theme-tufte. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ab/jekyll-theme-tufte. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct.
 
-## Development
+## Development of the theme
 
 To set up your environment to develop this theme, run `bundle install`.
 
