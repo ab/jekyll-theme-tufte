@@ -1,0 +1,316 @@
+/* Overrides and additional CSS functionality */
+
+.contrast { color: $contrast-color;}
+.smaller { font-size: 80%;}
+.larger { font-size: 2.8rem;}
+
+
+/**
+ * Make it so that top-level <p> don't need to be wrapped in <section>
+ */
+article > p,
+article > li,
+article > footer,
+article > table {
+    width: 55%;
+}
+
+
+//Nav and Footer styling area
+
+header > nav.group, body footer {
+  width: 95%;
+  padding-top: 2rem;
+}
+
+nav.group a.active { font-weight: bold; }
+// nav.group a.active:before{ content:"\0003c\000a0"; } // escaped unicode for the carats and then a space on active menu links
+// nav.group a.active:after{ content:"\000a0\0003e" ;}
+// nav.group a.active:before{ content:"\0003c"; } // escaped unicode for the angle brackets
+// nav.group a.active:after{ content:"\0003e" ;}
+nav.group a.active:before{ content:"\27e8"; } // escaped unicode for the angle brackets
+nav.group a.active:after{ content:"\27e9" ;}
+
+header > nav  a{
+  font-size: 1.2rem;
+  font-family: $sans-font;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $contrast-color;
+  padding-top: 1.5rem;
+  text-decoration: none;
+  background: unset !important;
+  text-shadow: unset !important;
+  display: inline-block;
+  float: left;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 2rem;
+  //margin-left: 1rem;
+  vertical-align: baseline;
+}
+header > nav a img{
+  height: 5rem;
+  position: relative;
+  max-width: 100%;
+  top:-1.5rem;
+}
+ul.footer-links, .credits{
+  list-style: none;
+  text-align: center;
+  margin: 0 auto;
+}
+ul.footer-links li{
+  display: inline;
+  padding: 0.5rem 0.25rem;
+}
+.credits{
+  padding: 1rem 0rem;
+}
+
+// End of Nav and Footer styling area
+
+//Full width page styling stuff
+
+/*
+body.full-width, .content-listing, ul.content-listing li.listing{ width: 90%;
+       margin-left: auto;
+       margin-right: auto;
+       padding: 0% 5%;
+
+}
+ */
+.full-width article p{
+  width: 90%;
+}
+
+
+h1.content-listing-header{
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 1.8rem;
+}
+
+li.listing hr{
+  width:100%;
+}
+.listing, .listing h3
+{
+  display: inline-block;
+  margin:0;
+}
+li.listing {
+  margin:0;
+  & p{
+    width: 100%
+  }
+}
+
+
+li.listing:last-of-type{
+  border-bottom: none;
+  margin-bottom: 1.4rem;
+}
+li.listing h3.new {
+  text-transform: uppercase;
+  font-style: normal;
+}
+hr.slender {
+    border: 0;
+    height: 1px;
+    margin-top: 2.1rem;
+    margin-bottom:2.1rem;
+    background-color: black;
+//    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+//    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+//    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+//    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+}
+// End of front listing page stuff
+
+
+// Printing ands screen media queries
+
+// Does not display a print-footer for screen display
+@media screen{
+  .print-footer{
+    display: none;
+  }
+}
+
+//printing stuff
+@media print {
+
+    * {
+    -webkit-transition: none !important;
+    transition: none !important;
+    }
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    @page {
+        margin: 0.75in 0.5in 0.75in 0.5in;
+        orphans:4; widows:2;
+    }
+
+    body {
+        font-size:  12pt;
+
+    }
+    html body span.print-footer{
+      font-family: $sans-font;
+      font-size: 9pt;
+      margin-top: 22.4pt;
+      padding-top: 4pt;
+      border-top: 1px solid #000;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 4;
+        widows: 4;
+    }
+    article h2, article h2 h3, article h3, article h3 h4, article h4, article h4 h5 {
+        page-break-after: avoid;
+    }
+
+    body header , body footer {
+      display:none;
+    }
+}
+
+
+// --------- Typography stuff -----------//
+// added rational line height and margins ala http://webtypography.net/intro/
+
+// h1 { font-weight: 400;
+//     margin-top: 1.568rem;
+//     margin-bottom: 1.568rem;
+//     font-size: 2.5rem;
+//     line-height: 0.784; }
+//
+// h2 { font-style: italic;
+//     font-weight: 400;
+//     margin-top: 1.866666666666667rem;
+//     margin-bottom: 0;
+//     font-size: 2.1rem;
+//     line-height: 0.933333333333333; }
+//
+// h3 { font-style: italic;
+//      font-weight: 400;
+//      font-size: 1.8rem;
+//      margin-top: 2.1777777777777778rem;
+//      margin-bottom: 0;
+//     line-height: 1.08888888888889; }
+h1 { font-weight: 400;
+     margin-top: 4rem;
+     margin-bottom: 1.5rem;
+     font-size: 3.2rem;
+     line-height: 1; }
+
+h1.header-title { font-weight: 400;
+     margin-top: 4rem;
+     margin-bottom: 1.5rem;
+     font-size: 6rem;
+     line-height: 1; 
+     a {
+       background: unset;
+       text-shadow: unset;
+     }
+}
+
+
+h2 { font-style: italic;
+     font-weight: 400;
+     margin-top: 5.1rem;
+     margin-bottom: 0;
+     font-size: 2.2rem;
+     line-height: 1; }
+
+h2.header-subtitle { font-weight: 400;
+     margin-top: 4rem;
+     margin-bottom: 1.5rem;
+     font-size: 3rem;
+     font-style: italic;
+     line-height: 1; 
+     }
+
+h3 { font-style: italic;
+     font-weight: 400;
+     font-size: 1.7rem;
+     margin-top: 2rem;
+     margin-bottom: 0;
+     line-height: 1; }
+
+
+// ET says a need for more than 3 levels of headings is the sign of a diseased mind
+
+p.subtitle { font-style: italic;
+             margin-top: 1rem;
+             margin-bottom: 1rem;
+             font-size: 1.8rem;
+             display: block;
+             line-height: 1;   }
+
+p.margin-maker {
+             margin-top: 1rem;
+             margin-bottom: 3.4rem;
+              }
+
+p, ol, ul { font-size: 1.4rem; }
+
+p, li { line-height: 2rem;
+        margin-top: 1.4rem;
+        padding-right: 2rem; //removed because,  why?
+        vertical-align: baseline; }
+
+blockquote p {  font-size: 1.1rem;
+                line-height: 1.78181818;
+                margin-top: 1.78181818rem;
+                margin-bottom: 1.78181818rem;
+                width: 45%;
+                padding-left: 2.5%;
+                padding-right: 2.5%; }
+
+blockquote p.epigraph {  font-size: 1.1rem;
+                line-height: 1.78181818;
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+                width: 45%;
+                padding-left: 2.5%;
+                padding-right: 2.5%; 
+                font-style:italic }
+
+blockquote footer { width: 45%;
+                    text-align: right; }
+
+
+.sans { font-family: $sans-font;
+        letter-spacing: .03em; }
+
+pre, pre code, p code, p pre code { font-family: $code-font;  // removed .code 'class' since code is an actual html tag
+        font-size: 1rem;                   // also added p code, p pre code and pre selector to account for Markdown parsing
+        line-height: 1.71428571;        // of triple backticks plus rationalized line-heights and margins
+        margin-top: 1.71428571rem; }
+
+
+h1 code, h2 code, h3 code { font-size: 0.80em; } //left in for no real reason

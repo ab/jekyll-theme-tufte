@@ -53,7 +53,7 @@ Links in Tufte CSS match the body text in color and do not change on mouseover o
 As always, these design choices are merely one approach that Tufte CSS provides by default. Other approaches, such as changing color on click or mouseover, or using highlighting or color instead of underlining to denote links, could also be made to work. The goal is to make sentences readable without interference from links, as well as to make links immediately identifiable even by casual web users.
 
 ## Epigraphs
-	
+
 {% epigraph 'The English language . . . becomes ugly and inaccurate because our thoughts are foolish, but the slovenliness of our language makes it easier for us to have foolish thoughts.' 'George Orwell, "Politics and the English Language"' %}
 
 {% epigraph 'For a successful technology, reality must take precedence over public relations, for Nature cannot be fooled.' 'Richard P. Feynman, "What Do You Care What Other People Think?"' %}
@@ -71,7 +71,7 @@ Sidenotes are a great example of the web not being like print. On sufficiently l
 
 Sidenotes consist of two elements: a superscript reference number that goes inline with the text, and a sidenote with content. To add the former, just put a label and dummy checkbox into the text where you want the reference to go, like so:
 
-```html 
+```html
 <label for="sn-demo" class="margin-toggle sidenote-number"></label>
   <input type="checkbox" id="sn-demo" class="margin-toggle"/>
 ```

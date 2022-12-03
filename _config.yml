@@ -1,24 +1,17 @@
-# Note: Change the baseurl in order to deploy somewhere below the root
-baseurl: /
+# Note: Remove the baseurl in order to deploy at the domain root
+baseurl: /jekyll-theme-tufte
 title: jekyll-theme-tufte
 # Whether the header (with large title and subtitle) should be displayed
 header: true
 subtitle: A Jekyll theme based on tufte-css
 author: Andy Brody
-email: git [at] abrody [dot] com
 description: A Jekyll theme based on tufte-css
 markdown: kramdown
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 highlighter: rouge
-permalink: /:categories/:year/:month/:day/:title.html
+permalink: /blog/:categories/:year/:month/:day/:title.html
 timezone: America/New_York
 excerpt_separator: <!--more-->
 exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md']
-post:
-  template: _post.txt
-  extension: md
-page:
-  template: _page.txt
-  extension: md
 git:
   branch: main

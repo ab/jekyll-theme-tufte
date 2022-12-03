@@ -30,9 +30,6 @@ nav_exclude: true
 
 html, body { height: 100%; }
 
-// First significant deviation from CSS on tufte.css site - variable font size as browser width expands or contracts
-//html { font-size: 15px; }
-
 html{
     text-align: baseline;
     font-size: 15px;
@@ -40,18 +37,6 @@ html{
     -moz-osx-font-smoothing: grayscale;
 
   }
-
-@media screen and (min-width: 800px){ html{ font-size: 12px;} }
-
-@media screen and (min-width: 900px){ html{ font-size: 13px;} }
-
-@media screen and (min-width: 1000px){ html{ font-size: 14px;} }
-
-@media screen and (min-width: 1100px){ html{ font-size: 15px; } }
-
-@media screen and (min-width: 1200px){ html{ font-size: 16px; } }
-
-@media screen and (min-width: 1300px){ html{ font-size: 17px; } }
 
 // sets link style according to values in _settings.scss
 .mathblock{
@@ -294,7 +279,8 @@ section { padding-top: 1rem;
 ul,ol { width: 45%;
      -webkit-padding-start: 5%;
      -webkit-padding-end: 5%;
-     list-style-type: none; }
+     // list-style-type: none;
+ }
 
 //li { padding: 0.5em 0; } //vertical padding on list items screws up vertical rhythym
 
