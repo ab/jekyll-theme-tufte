@@ -7,6 +7,7 @@
   font-weight: 100;
   src: local('Lato Thin'),
        url('../fonts/LatoLatin-Thin.woff2') format('woff2');
+  text-rendering: optimizeLegibility;
 }
 /* lato-100italic - latin */
 @font-face {
@@ -15,6 +16,7 @@
   font-weight: 100;
   src: local('Lato Thin Italic'),
        url('../fonts/LatoLatin-ThinItalic.woff2') format('woff2');
+  text-rendering: optimizeLegibility;
 }
 /* lato-300 - latin */
 @font-face {
@@ -23,6 +25,7 @@
   font-weight: 300;
   src: local('Lato Light'),
        url('../fonts/LatoLatin-Light.woff2') format('woff2');
+  text-rendering: optimizeLegibility;
 }
 /* lato-300italic - latin */
 @font-face {
@@ -31,6 +34,7 @@
   font-weight: 300;
   src: local('Lato Light Italic'),
        url('../fonts/LatoLatin-LightItalic.woff2') format('woff2');
+  text-rendering: optimizeLegibility;
 }
 /* lato-regular - latin */
 @font-face {
@@ -39,6 +43,7 @@
   font-weight: 400;
   src: local('Lato Regular'),
        url('../fonts/LatoLatin-Regular.woff2') format('woff2');
+  text-rendering: optimizeLegibility;
 }
 /* lato-italic - latin */
 @font-face {
@@ -47,6 +52,7 @@
   font-weight: 400;
   src: local('Lato Italic'),
        url('../fonts/LatoLatin-Italic.woff2') format('woff2');
+  text-rendering: optimizeLegibility;
 }
 /* lato-700 - latin */
 @font-face {
@@ -55,6 +61,7 @@
   font-weight: 700;
   src: local('Lato Bold'),
        url('../fonts/LatoLatin-Bold.woff2') format('woff2');
+  text-rendering: optimizeLegibility;
 }
 /* lato-700italic - latin */
 @font-face {
@@ -63,6 +70,7 @@
   font-weight: 700;
   src: local('Lato Bold Italic'),
        url('../fonts/LatoLatin-BoldItalic.woff2') format('woff2');
+  text-rendering: optimizeLegibility;
 }
 /* lato-900 - latin */
 @font-face {
@@ -71,6 +79,7 @@
   font-weight: 900;
   src: local('Lato Black'),
        url('../fonts/LatoLatin-Black.woff2') format('woff2');
+  text-rendering: optimizeLegibility;
 }
 /* lato-900italic - latin */
 @font-face {
@@ -79,4 +88,5 @@
   font-weight: 900;
   src: local('Lato Black Italic'),
        url('../fonts/LatoLatin-BlackItalic.woff2') format('woff2');
+  text-rendering: optimizeLegibility;
 }

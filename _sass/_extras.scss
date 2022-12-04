@@ -38,7 +38,6 @@ nav.group a.active:after { content:"\27e9" ; }
 
 header > nav  a{
   font-size: 1.3rem;
-  font-family: $sans-font;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: $contrast-color;
@@ -173,7 +172,6 @@ hr.slender {
 
     }
     html body span.print-footer{
-      font-family: $sans-font;
       font-size: 9pt;
       margin-top: 22.4pt;
       padding-top: 4pt;
