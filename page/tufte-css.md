@@ -5,6 +5,8 @@ subtitle: Reproduction of the tufte-css demo site by Dave Liepmann
 weight: 3
 ---
 
+*Note: This is a recreation of the tufte-css demo page, using markdown. The usage instructions here are for standalone tufte-css, not jekyll-theme-tufte. See the [markdown source code](https://github.com/ab/jekyll-theme-tufte/blob/main/page/tufte-css.md) for usage hints.*
+
 Tufte CSS provides tools to style web articles using the ideas demonstrated by Edward Tufte's books and handouts. Tufte's style is known for its simplicity, extensive use of sidenotes, tight integration of graphics with text, and carefully chosen typography.
 
 Tufte CSS was created by [Dave Liepmann](http://www.daveliepmann.com) and is now an Edward Tufte project. The original idea was cribbed from [Tufte-{% latex %}](https://tufte-latex.github.io/tufte-latex/) and [R Markdown's Tufte Handout format](http://rmarkdown.rstudio.com/tufte_handout_format.html). We give hearty thanks to all the people who have contributed to those projects.

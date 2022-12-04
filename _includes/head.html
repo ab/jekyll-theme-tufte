@@ -3,17 +3,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  {% if page.head_title %}
+    <title>{{ page.head_title }}</title>
+  {% else %}
+    {% if page.collection == "posts" %}
+      <title>{{ page.title | default: "Post" }}{% if site.author %} | by {{ site.author }}{% endif %}</title>
+    {% else %}
+      <title>{% if page.nav_title or page.title %}{{ page.nav_title | default: page.title }} | {% endif %}{{ site.title }}</title>
+    {% endif %}
+  {% endif %}
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
-  {% if site.data.options.mathjax %}
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  {% endif %}
-
   <link rel="stylesheet" type="text/css" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/fonts-et-book.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/fonts-lato.css" | prepend: site.baseurl }}">
   <link rel="stylesheet" type="text/css" href="{{ "/assets/css/latex.css" | prepend: site.baseurl }}">
-  <!-- <link rel="stylesheet" type="text/css" href="{{ "/assets/css/print.css" | prepend: site.baseurl }}" media="print"> -->
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 

@@ -8,31 +8,36 @@
 /**
  * Make it so that top-level <p> don't need to be wrapped in <section>
  */
-article > p,
-article > li,
-article > footer,
-article > table {
-    width: 55%;
+article {
+    p, li, footer, table {
+        width: 55%;
+    }
 }
+footer {
+    width: 55%;
+    padding-top: 2rem;
+}
+// should still go wide on narrow screens
+@media (max-width: 760px) {
+    article {
+        p, li, footer, table {
+            width: 100%;
+        }
+    }
+    footer { width: 100%; }
+}
+
 
 
 //Nav and Footer styling area
 
-header > nav.group, body footer {
-  width: 95%;
-  padding-top: 2rem;
-}
-
+/* Style for active menu links: bold and with surrounding angle brackets */
 nav.group a.active { font-weight: bold; }
-// nav.group a.active:before{ content:"\0003c\000a0"; } // escaped unicode for the carats and then a space on active menu links
-// nav.group a.active:after{ content:"\000a0\0003e" ;}
-// nav.group a.active:before{ content:"\0003c"; } // escaped unicode for the angle brackets
-// nav.group a.active:after{ content:"\0003e" ;}
-nav.group a.active:before{ content:"\27e8"; } // escaped unicode for the angle brackets
-nav.group a.active:after{ content:"\27e9" ;}
+nav.group a.active:before { content:"\27e8"; }
+nav.group a.active:after { content:"\27e9" ; }
 
 header > nav  a{
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-family: $sans-font;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -80,8 +85,13 @@ body.full-width, .content-listing, ul.content-listing li.listing{ width: 90%;
 
 }
  */
-.full-width article p{
-  width: 90%;
+.full-width article {
+    p, li, footer, table {
+        width: 90%;
+    }
+}
+.full-width footer {
+    width: 90%;
 }
 
 
@@ -231,7 +241,7 @@ h1.header-title { font-weight: 400;
      margin-top: 4rem;
      margin-bottom: 1.5rem;
      font-size: 6rem;
-     line-height: 1; 
+     line-height: 1;
      a {
        background: unset;
        text-shadow: unset;
@@ -251,7 +261,7 @@ h2.header-subtitle { font-weight: 400;
      margin-bottom: 1.5rem;
      font-size: 3rem;
      font-style: italic;
-     line-height: 1; 
+     line-height: 1;
      }
 
 h3 { font-style: italic;
@@ -262,7 +272,7 @@ h3 { font-style: italic;
      line-height: 1; }
 
 
-// ET says a need for more than 3 levels of headings is the sign of a diseased mind
+// ET style doesn't like more than 3 levels of headings
 
 p.subtitle { font-style: italic;
              margin-top: 1rem;
@@ -297,7 +307,7 @@ blockquote p.epigraph {  font-size: 1.1rem;
                 margin-bottom: 3rem;
                 width: 45%;
                 padding-left: 2.5%;
-                padding-right: 2.5%; 
+                padding-right: 2.5%;
                 font-style:italic }
 
 blockquote footer { width: 45%;

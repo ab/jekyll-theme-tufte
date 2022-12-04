@@ -2,22 +2,21 @@
 <header>
 	{% if site.header == true %}
 		<h1 class="header-title"><a href="{{site.baseurl}}/">{{ site.title }}</a></h1>
-		{% if site.subtitle == "" or site.subtitle == nil %}
-		{% else %}
+		{% unless site.subtitle == "" or site.subtitle == nil %}
 			<h2 class="header-subtitle">{{ site.subtitle }}</h2>
-		{% endif %}
+    {% endunless %}
 	{% endif %}
 
     <nav class="group">
 	{% assign pg = site.pages | sort: "weight" %}
 	{% for node in pg %}
     {% unless node.nav_exclude or node.url contains ".css" or node.url contains ".scss" %}
-		    {% if page.url == node.url %}
-		      <a class="active" href="{{node.url | prepend: site.baseurl}}" class="active">{{node.title}}</a>
-		    {% else %}
-		      <a href="{{node.url | prepend: site.baseurl}}">{{node.title}}</a>
-		    {% endif %}
-	    {% endunless %}
-  	{% endfor %}
-	</nav>
+      <a href="{{node.url | prepend: site.baseurl}}"
+        {% if page.url == node.url %} class="active" {% endif %}
+      >
+      {{ node.nav_title | default: node.title }}
+      </a>
+  {% endunless %}
+{% endfor %}
+</nav>
 </header>
