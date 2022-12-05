@@ -1,13 +1,11 @@
-<footer>
-  <div class="credits">
+<footer class="page-footer">
+  <div class="credits faded">
     <span>&copy; {{ site.time | date: '%Y' }}
       {% if site.email == "" or site.email == nil %}
         {{ site.author }}
       {% else %}
         <a href="mailto:{{ site.email }}">{{site.author}}</a>
       {% endif %}
-  </span>
-  </br></br>
-  <span>Created with <a href="https://github.com/ab/jekyll-theme-tufte">jekyll-theme-tufte</a>.</span>
+    </span>
   </div>
 </footer>

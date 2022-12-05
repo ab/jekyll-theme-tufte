@@ -30,3 +30,5 @@ files in with your site's files, which creates a big mess.)
 Edward Tufte's style is known for extensive use of sidenotes, which *tufte-css* displays next to a half-width layout. {% sidenote "layouts" 'See [Layouts](./page/layouts) for more layout options.' %}
 
 To read more about the Tufte style and its usage, have a look at the [Tufte CSS](./page/tufte-css) demo page.
+
+An Atom RSS feed is provided at [`/feed.xml`]({{ site.baseurl }}/feed.xml).

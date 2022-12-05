@@ -4,6 +4,7 @@
 .smaller { font-size: 80%;}
 .larger { font-size: 2.8rem;}
 
+.faded { color: rgba(17,17,17,0.5); }
 
 /**
  * Make it so that top-level <p> don't need to be wrapped in <section>
@@ -15,7 +16,6 @@ article {
 }
 footer {
     width: 55%;
-    padding-top: 2rem;
 }
 // should still go wide on narrow screens
 @media (max-width: 760px) {
@@ -76,14 +76,6 @@ ul.footer-links li{
 
 //Full width page styling stuff
 
-/*
-body.full-width, .content-listing, ul.content-listing li.listing{ width: 90%;
-       margin-left: auto;
-       margin-right: auto;
-       padding: 0% 5%;
-
-}
- */
 .full-width article {
     p, li, footer, table {
         width: 90%;
@@ -93,13 +85,6 @@ body.full-width, .content-listing, ul.content-listing li.listing{ width: 90%;
     width: 90%;
 }
 
-
-h1.content-listing-header{
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  font-size: 1.8rem;
-}
 
 li.listing hr{
   width:100%;
@@ -291,26 +276,6 @@ p, li { line-height: 2rem;
         padding-right: 2rem; //removed because,  why?
         vertical-align: baseline; }
 
-blockquote p {  font-size: 1.1rem;
-                line-height: 1.78181818;
-                margin-top: 1.78181818rem;
-                margin-bottom: 1.78181818rem;
-                width: 45%;
-                padding-left: 2.5%;
-                padding-right: 2.5%; }
-
-blockquote p.epigraph {  font-size: 1.1rem;
-                line-height: 1.78181818;
-                margin-top: 3rem;
-                margin-bottom: 3rem;
-                width: 45%;
-                padding-left: 2.5%;
-                padding-right: 2.5%;
-                font-style:italic }
-
-blockquote footer { width: 45%;
-                    text-align: right; }
-
 
 .sans { font-family: $sans-font;
         letter-spacing: .03em; }
@@ -322,3 +287,26 @@ pre, pre code, p code, p pre code { font-family: $code-font;  // removed .code '
 
 
 h1 code, h2 code, h3 code { font-size: 0.80em; } //left in for no real reason
+
+
+/*
+ * Fancy Blockquotes
+ * Style the blockquotes with a fancy quote character at the beginning
+ */
+blockquote.fancy p:first-child {
+  position: relative;
+}
+blockquote.fancy p:first-child::before {
+  content: "“";
+  display: block;
+  position: absolute;
+  font-size: 5rem;
+  top: 0.9rem;
+  left: -3.4rem;
+}
+/* Make all elements in a blockquote except the last line of a blockquote non-italic so it looks like an attribution line.
+ * To avoid this, either add an empty <p></p> at the end, style the p with italic, or don't use the fancy blockquote.
+ */
+blockquote.fancy p {
+  font-style: italic;
+}
