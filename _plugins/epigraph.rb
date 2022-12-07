@@ -1,25 +1,53 @@
-## Newthought tag will render anything in the tag with small caps
-## Usage {% newthought Your text string here} will render a span
-## YOUR TEXT STRING HERE (sort of, you know, small caps) if you are using the tufte.css file
+# frozen_string_literal: true
 
 module Jekyll
-  class RenderEpigraphTag < Liquid::Tag
+  #
+  # The epigraph tag provides a way to generate <blockquote> tags with epigraph
+  # styling per tufte-css.
+  #
+  # For example:
+  #
+  #     {% epigraph Richard P. Feynman, <cite>"What Do You Care What Other People Think?"</cite> %}
+  #       For a successful technology, reality must take precedence over public relations, for Nature cannot be fooled.
+  #     {% endepigraph %}
+  #
+  # This will generate:
+  #
+  #     <div class="epigraph">
+  #       <blockquote>
+  #         <p> For a successful technology, reality must take precedence over public relations, for Nature cannot be fooled.</p>
+  #         <footer>Richard P. Feynman, <cite>"What Do You Care What Other People Think?"</cite></footer>
+  #       </blockquote>
+  #     </div>
+  #
+  class EpigraphTag < Liquid::Block
 
-require "shellwords"
-
-    def initialize(tag_name, text, tokens)
+    def initialize(tag_name, text, context)
       super
-      @text = text.shellsplit
+
+      @footer = text
     end
 
-
     def render(context)
-      "<blockquote>
-         <p class=\"epigraph\">#{@text[0]}<cite class=\"epigraph\">#{@text[1]}</cite>
-</p>
-          </blockquote>"
+      # call super to get content between start and end tags
+      body = super
+
+      if @footer && !@footer.empty?
+        footer_html = "<footer>#{@footer}</footer>"
+      else
+        footer_html = ''
+      end
+
+      <<~HTML
+        <div class="epigraph">
+          <blockquote>
+            <p>#{body}</p>
+            #{footer_html}
+          </blockquote>
+        </div>
+      HTML
     end
   end
 end
 
-Liquid::Template.register_tag('epigraph', Jekyll::RenderEpigraphTag)
+Liquid::Template.register_tag('epigraph', Jekyll::EpigraphTag)
