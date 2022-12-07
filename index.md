@@ -17,6 +17,7 @@ This is a gem-packaged theme that can be easily installed by including
 *jekyll-theme-tufte* in your `Gemfile`.
 
 Large portions of the theme are derived from prior work to bring *tufte-css* to Jekyll, including:
+
 * [*tufte-css-jekyll*](https://github.com/sdruskat/tufte-css-jekyll), a classic-style Jekyll theme {% sidenote 'origins' "This theme started out as a gem repackaging of *tufte-css-jekyll*, but then I decided to clean up the layout" %}
 * [*tufte-jekyll*](https://github.com/clayh53/tufte-jekyll), a classic-style theme with a lot of extra visual stuff added
 * [*tufte-pandoc-jekyll*](https://github.com/jez/tufte-pandoc-jekyll), a gem-style theme that uses pandoc under the hood
