@@ -7,16 +7,23 @@
     {% endunless %}
 	{% endif %}
 
-    <nav class="group">
-	{% assign pg = site.pages | sort: "weight" %}
-	{% for node in pg %}
-    {% unless node.nav_exclude or node.url contains ".css" or node.url contains ".scss" %}
+  <nav class="group">
+    {%- assign pg = site.pages | sort: "weight" %}
+    {%- for node in pg %}
+      {%- if node.nav_exclude or node.url contains ".css" or node.url contains ".scss" %}
+        {%- continue %}
+      {%- endif %}
+
+      {%- assign title = node.nav_title | default: node.title %}
+      {%- unless title and title != "" %}
+        {%- continue %}
+      {%- endunless %}
+
       <a href="{{node.url | prepend: site.baseurl}}"
-        {% if page.url == node.url %} class="active" {% endif %}
+        {%- if page.url == node.url %} class="active" {% endif -%}
       >
-      {{ node.nav_title | default: node.title }}
+        {{ title }}
       </a>
-  {% endunless %}
-{% endfor %}
-</nav>
+    {%- endfor %}
+  </nav>
 </header>
