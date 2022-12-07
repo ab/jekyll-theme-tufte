@@ -193,8 +193,9 @@ hr.slender {
         page-break-after: avoid;
     }
 
-    body header , body footer {
-      display:none;
+    // Hide screen headers and footers
+    body header, footer.page-footer, p.backarrow {
+      display: none;
     }
 }
 
