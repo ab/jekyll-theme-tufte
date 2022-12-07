@@ -3,18 +3,25 @@
 require 'shellwords'
 
 module Jekyll
-  class RenderMarginNoteTag < Liquid::Tag
+  # usage: {% marginnote 'idtag' 'Content of the note...' %}
+  class MarginNoteTag < Liquid::Tag
 
     def initialize(tag_name, text, tokens)
       super
       @text = text.shellsplit
+      if @text.length != 2
+        raise Liquid::SyntaxError, 'marginnote expects two shell-quoted arguments'
+      end
     end
 
     def render(context)
-      "<label for='#{@text[0]}' class='margin-toggle'> &#8853;</label><input type='checkbox' id='#{@text[0]}' class='margin-toggle' checked/><span class='marginnote'>#{@text[1]} </span>"
+      [
+        "<label for='#{@text.fetch(0)}' class='margin-toggle'> &#8853;</label>",
+        "<input type='checkbox' id='#{@text.fetch(0)}' class='margin-toggle' checked/>",
+        "<span class='marginnote'>#{@text.fetch(1)}</span>",
+      ].join('')
     end
   end
 end
 
-Liquid::Template.register_tag('marginnote', Jekyll::RenderMarginNoteTag)
-
+Liquid::Template.register_tag('marginnote', Jekyll::MarginNoteTag)

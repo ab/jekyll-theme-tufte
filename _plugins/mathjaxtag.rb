@@ -18,9 +18,9 @@ class MathJaxEndInlineTag < Liquid::Tag
     def render(context)
       '</script></span>'
     end
-  end  
+  end
 end
- 
+
 Liquid::Template.register_tag('math', Jekyll::MathJaxBlockTag)
 Liquid::Template.register_tag('m', Jekyll::MathJaxInlineTag)
 Liquid::Template.register_tag('endmath', Jekyll::MathJaxEndBlockTag)

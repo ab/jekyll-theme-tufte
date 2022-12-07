@@ -1,26 +1,36 @@
-## Liquid tag 'maincolumn-figure' used to add image data that fits within the
-## main column area of the layout
-## Usage {% maincolumn 'path/to/image' 'This is the caption' %}
-#
+# frozen_string_literal: true
+
+require 'shellwords'
+
 module Jekyll
-  class RenderMainColumnTag < Liquid::Tag
+  # Liquid tag 'maincolumn-figure' used to add image data that fits within the
+  # main column area of the layout
+  # Usage {% maincolumn 'path/to/image' 'This is the caption' %}
+  #
+  class MainColumnTag < Liquid::Tag
 
-  	require "shellwords"
-
-    def initialize(tag_name, text, tokens)
+    def initialize(tag_name, text, context)
       super
-      @text = text.shellsplit
+      args = text.shellsplit
+      if args.length != 2
+        raise Liquid::SyntaxError, "maincolumn expects 2 shell quoted args, parsed #{args.inspect}"
+      end
+
+      @src = args.fetch(0)
+      @caption = args.fetch(1)
     end
 
     def render(context)
       baseurl = context.registers[:site].config['baseurl']
-      if @text[0].start_with?('http://', 'https://','//')
-        "<figure><figcaption><span markdown='1'>#{@text[1]}</span></figcaption><img src='#{@text[0]}'/></figure>"
+      if @src.start_with?('http://', 'https://', '//')
+        fullsrc = @src
       else
-        "<figure><figcaption><span markdown='1'>#{@text[1]}</span></figcaption><img src='#{baseurl}/#{@text[0]}'/></figure>"
+        fullsrc = "#{baseurl}/#{@src}"
       end
+
+      "<figure><figcaption><span markdown='1'>#{@caption}</span></figcaption><img src='#{fullsrc}'/></figure>"
     end
   end
 end
 
-Liquid::Template.register_tag('maincolumn', Jekyll::RenderMainColumnTag)
+Liquid::Template.register_tag('maincolumn', Jekyll::MainColumnTag)
