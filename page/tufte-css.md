@@ -9,7 +9,7 @@ weight: 3
 
 Tufte CSS provides tools to style web articles using the ideas demonstrated by Edward Tufte's books and handouts. Tufte's style is known for its simplicity, extensive use of sidenotes, tight integration of graphics with text, and carefully chosen typography.
 
-Tufte CSS was created by [Dave Liepmann](http://www.daveliepmann.com) and is now an Edward Tufte project. The original idea was cribbed from [Tufte-{% latex %}](https://tufte-latex.github.io/tufte-latex/) and [R Markdown's Tufte Handout format](http://rmarkdown.rstudio.com/tufte_handout_format.html). We give hearty thanks to all the people who have contributed to those projects.
+Tufte CSS was created by [Dave Liepmann](http://www.daveliepmann.com) and is now an Edward Tufte project. The original idea was cribbed from <a href="https://tufte-latex.github.io/tufte-latex/">Tufte-<span class="latex">L<span class="latex-sup">a</span>T<span class="latex-sub">e</span>X</span></a> and [R Markdown's Tufte Handout format](http://rmarkdown.rstudio.com/tufte_handout_format.html). We give hearty thanks to all the people who have contributed to those projects.
 
 If you see anything that Tufte CSS could improve, we welcome your contribution in the form of an issue or pull request on the GitHub project: [tufte-css](https://github.com/edwardtufte/tufte-css). Please note the [contribution guidelines](https://github.com/edwardtufte/tufte-css#contributing).
 
