@@ -120,9 +120,9 @@ Tufte emphasizes tight integration of graphics with text. Data, graphs, and figu
 
 Figures should try to use the `figure` element, which by default are constrained to the main column. Don't wrap figures in a paragraph tag. Any label or margin note goes in a regular margin note inside the figure. For example, most of the time one should introduce a figure directly into the main flow of discussion, like so:
 
-{% maincolumn 'assets/img/exports-imports.png' 'From Edward Tufte, *Visual Display of Quantitative Information*, page 92.' %}
+{% maincolumn 'demo/img/exports-imports.png' 'From Edward Tufte, *Visual Display of Quantitative Information*, page 92.' %}
 
-{% marginfigure 'mf-id-whatever' 'assets/img/rhino.png' 'F.J. Cole, “The History of Albrecht Dürer’s Rhinoceros in Zoological Literature,” *Science, Medicine, and History: Essays on the Evolution of Scientific Thought and Medical Practice* (London, 1953), ed. E. Ashworth Underwood, 337-356. From page 71 of Edward Tufte’s *Visual Explanations*.' %}
+{% marginfigure 'mf-id-whatever' 'demo/img/rhino.png' 'F.J. Cole, “The History of Albrecht Dürer’s Rhinoceros in Zoological Literature,” *Science, Medicine, and History: Essays on the Evolution of Scientific Thought and Medical Practice* (London, 1953), ed. E. Ashworth Underwood, 337-356. From page 71 of Edward Tufte’s *Visual Explanations*.' %}
 
 But tight integration of graphics with text is central to Tufte's work even when those graphics are ancillary to the main body of a text. In many of those cases, a margin figure may be most appropriate. To place figures in the margin, just wrap an image (or whatever) in a margin note inside a `p` tag, as seen to the right of this paragraph.
 
@@ -130,7 +130,7 @@ If you need a full-width figure, give it the `fullwidth` class. Make sure that's
 
 <br>
 
-{% fullwidth 'assets/img/napoleons-march.png' "" %}
+{% fullwidth 'demo/img/napoleons-march.png' "" %}
 
 ## Code
 
@@ -165,11 +165,11 @@ Tufte CSS provides support for Edward Tufte and Adam Schwartz's [ImageQuilts](ht
 
 This is an ImageQuilt surveying Chinese calligraphy, placed in a full-width figure to accomodate its girth:
 
-{% fullwidth 'assets/img/imagequilt-chinese-calligraphy.png' 'Chinese calligraphy quilt.' %}
+{% fullwidth 'demo/img/imagequilt-chinese-calligraphy.png' 'Chinese calligraphy quilt.' %}
 
 Here is an ImageQuilt of 47 animal sounds over and over, in a figure constrained to the main text region. This quilt has ragged edges, but the image itself is of course still rectangular.
 
-{% maincolumn 'assets/img/imagequilt-animal-sounds.png' '' %}
+{% maincolumn 'demo/img/imagequilt-animal-sounds.png' '' %}
 
 ## Epilogue
 
