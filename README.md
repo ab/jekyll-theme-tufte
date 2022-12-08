@@ -24,7 +24,7 @@ via `prefers-color-scheme`, looking good on dark and light backgrounds alike.
 
 ### [Try out the demo!](https://ab.github.io/jekyll-theme-tufte/)
 
-[![demo-screenshot](./demo/demo-feature.png)](https://ab.github.io/jekyll-theme-tufte/)
+[![demo-screenshot](./screenshot.png)](https://ab.github.io/jekyll-theme-tufte/)
 
 ## Installation
 
