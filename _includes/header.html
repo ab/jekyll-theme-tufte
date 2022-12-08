@@ -8,6 +8,7 @@
 	{% endif %}
 
   <nav class="group">
+    <ul>
     {%- assign pg = site.pages | sort: "weight" %}
     {%- for node in pg %}
       {%- if node.nav_exclude or node.url contains ".css" or node.url contains ".scss" %}
@@ -19,11 +20,14 @@
         {%- continue %}
       {%- endunless %}
 
-      <a href="{{node.url | prepend: site.baseurl}}"
-        {%- if page.url == node.url %} class="active" {% endif -%}
-      >
-        {{ title }}
-      </a>
+      <li>
+        <a href="{{node.url | prepend: site.baseurl}}"
+          {%- if page.url == node.url %} class="active" {% endif -%}
+        >
+          {{ title }}
+        </a>
+      </li>
     {%- endfor %}
+    </ul>
   </nav>
 </header>
