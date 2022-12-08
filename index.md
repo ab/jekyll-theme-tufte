@@ -3,7 +3,7 @@ layout: page
 title: jekyll-theme-tufte
 nav_title: About
 head_title: jekyll-theme-tufte
-subtitle: A Jekyll theme based on tufte-css
+subtitle: A modern Jekyll theme based on tufte-css
 hero_title: true
 weight: 1
 ---
@@ -31,5 +31,9 @@ files in with your site's files, which creates a big mess.)
 Edward Tufte's style is known for extensive use of sidenotes, which *tufte-css* displays next to a half-width layout. {% sidenote "layouts" 'See [Layouts](./page/layouts) for more layout options.' %}
 
 To read more about the Tufte style and its usage, have a look at the [Tufte CSS](./page/tufte-css) demo page.
+
+This theme is responsive and adapts to desktop and mobile screens. (Margin notes
+are displayed inline on narrow screens.) It also supports dark mode detection
+via `prefers-color-scheme`, looking good on dark and light backgrounds alike.
 
 An Atom RSS feed is provided at [`/feed.xml`]({{ site.baseurl }}/feed.xml).

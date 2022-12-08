@@ -1,8 +1,8 @@
 # jekyll-theme-tufte
 
-## *A minimal Jekyll theme based on [tufte-css](https://github.com/edwardtufte/tufte-css)*
+## *A modern Jekyll theme based on [tufte-css](https://github.com/edwardtufte/tufte-css)*
 
-*jekyll-theme-tufte* is a [Jekyll](https://jekyllrb.com) static website theme  inspired by the text design of Edward
+*jekyll-theme-tufte* is a [Jekyll](https://jekyllrb.com) static website theme inspired by the text design of Edward
 Tufte. It is enabled by [*tufte-css*](https://github.com/edwardtufte/tufte-css),
 a CSS file providing the Tufte styles.
 
@@ -18,9 +18,13 @@ Large portions of the theme are derived from prior work to bring *tufte-css* to 
 
 This theme is minimalist and tries to stick closely to the original tufte-css styles. As a gem-based theme, it is also easier to install and manage compared to classic style themes. (Classic Jekyll themes are installed by mixing all the files in with your site’s files, which creates a big mess.)
 
-## Demo page
+This theme is responsive and adapts to desktop and mobile screens. (Margin notes
+are displayed inline on narrow screens.) It also supports dark mode detection
+via `prefers-color-scheme`, looking good on dark and light backgrounds alike.
 
-See the theme in action on the [demo page](https://ab.github.io/jekyll-theme-tufte/).
+### [Try out the demo!](https://ab.github.io/jekyll-theme-tufte/)
+
+[![demo-screenshot](./demo/demo-feature.png)](https://ab.github.io/jekyll-theme-tufte/)
 
 ## Installation
 
