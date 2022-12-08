@@ -23,7 +23,7 @@ module Jekyll
       end
     end
 
-    def render(context)
+    def render(_context)
       "<span class='newthought'>#{@text.fetch(0)}</span>"
     end
   end

@@ -3,13 +3,8 @@
 require 'shellwords'
 
 module Jekyll
-  class RenderSideNoteTag < Liquid::Tag
-
-    # usage: {% sidenote 'idtag' 'Content of the note...' %}
-    def initialize(tag_name, text, context)
-      super
-      @text = text.shellsplit
-    end
+  # usage: {% sidenote 'idtag' 'Content of the note...' %}
+  class SideNoteTag < Liquid::Tag
 
     def initialize(tag_name, text, context)
       super
@@ -19,7 +14,7 @@ module Jekyll
       end
     end
 
-    def render(context)
+    def render(_context)
       [
         "<label for='#{@text.fetch(0)}' class='margin-toggle sidenote-number'></label>",
         "<input type='checkbox' id='#{@text.fetch(0)}' class='margin-toggle' checked/>",
@@ -29,4 +24,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('sidenote', Jekyll::RenderSideNoteTag)
+Liquid::Template.register_tag('sidenote', Jekyll::SideNoteTag)

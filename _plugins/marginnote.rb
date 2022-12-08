@@ -6,7 +6,7 @@ module Jekyll
   # usage: {% marginnote 'idtag' 'Content of the note...' %}
   class MarginNoteTag < Liquid::Tag
 
-    def initialize(tag_name, text, tokens)
+    def initialize(tag_name, text, context)
       super
       @text = text.shellsplit
       if @text.length != 2
@@ -14,7 +14,7 @@ module Jekyll
       end
     end
 
-    def render(context)
+    def render(_context)
       [
         "<label for='#{@text.fetch(0)}' class='margin-toggle'> &#8853;</label>",
         "<input type='checkbox' id='#{@text.fetch(0)}' class='margin-toggle' checked/>",
