@@ -10,7 +10,7 @@ The *jekyll-theme-tufte* includes two layouts by default. Choose your layout in 
 
 * Use `layout: post` for blog posts.
 * Use `layout: page` for standalone Jekyll pages.
-* Use `layout: blog` for the listing of all blog posts.
+* Use `layout: blog-list` for the listing of all blog posts.
 
 The default layouts are half width to allow room for sidenotes. Set `full_width: true` in the front matter to make the body content run the full width of the page instead. (This page you're reading is full width.)
 
