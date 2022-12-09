@@ -1,6 +1,11 @@
-/* Import ET Book styles
-   adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
+/*
+ * Import ET Book styles
+ * adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css
+ * There are also versions available with ff/fi/fl ligatures enabled, but
+ * honestly I find that they reduce legibility rather than improving it.
+ */
 
+/* The default family has line numerals, where numbers all look like uppercase letters. */
 @font-face {
     font-family: "et-book";
     src: url("../fonts/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff");
@@ -28,6 +33,7 @@
     text-rendering: optimizeLegibility;
 }
 
+/* The old-style family has oldstyle numerals where numbers look like lowercase letters. */
 @font-face {
     font-family: "et-book-roman-old-style";
     src: url("../fonts/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff");

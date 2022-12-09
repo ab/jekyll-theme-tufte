@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Lorem Ipsum
+subtitle: The famous placeholder text
 date: 1914-01-01
 author: Cicero (sort of)
 ---

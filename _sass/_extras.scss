@@ -5,6 +5,9 @@
 .larger { font-size: 2.8rem;}
 
 .faded { color: rgba(17,17,17,0.5); }
+@media (prefers-color-scheme: dark) {
+    .faded { color: rgba(255, 255, 255, 0.5); }
+}
 
 /**
  * Make it so that top-level <p> don't need to be wrapped in <section>
@@ -76,6 +79,12 @@ header > nav a img{
 }
 
 header::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.clear::after {
     display: block;
     content: '';
     clear: both;
@@ -298,12 +307,27 @@ h3 { font-style: italic;
   }
 }
 
-p.subtitle { font-style: italic;
-             margin-top: 1rem;
-             margin-bottom: 1rem;
-             font-size: 1.8rem;
-             display: block;
-             line-height: 1;   }
+p.subtitle {
+    font-style: italic;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    display: block;
+    line-height: 1;
+}
+
+p.byline {
+    font-style: italic;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    // font-size: 1.4rem;
+    display: block;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.6)
+}
+@media (prefers-color-scheme: dark) {
+    p.byline { color: rgba(255, 255, 255, 0.6); }
+}
 
 p.margin-maker {
              margin-top: 1rem;

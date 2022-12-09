@@ -10,6 +10,7 @@ The *jekyll-theme-tufte* includes two layouts by default. Choose your layout in 
 
 * Use `layout: post` for blog posts.
 * Use `layout: page` for standalone Jekyll pages.
+* Use `layout: blog` for the listing of all blog posts.
 
 The default layouts are half width to allow room for sidenotes. Set `full_width: true` in the front matter to make the body content run the full width of the page instead. (This page you're reading is full width.)
 
@@ -38,3 +39,26 @@ weight: 4
 
 Content here...
 ```
+
+## Typography notes
+
+This theme bundles the [*et-book*](https://github.com/edwardtufte/et-book) typeface from *tufte-css*.
+
+### Lining numerals
+
+By default, we use lining numerals with uniform height. This is good for tables.
+
+> We zeroed in on 1,234 cases out of 5,678 candidates in the last 90 days.
+
+### Old-style numerals
+Add the `.numeral` CSS class to any element to use old-style numerals.
+This is good for numbers in text.
+
+> We zeroed in on 1,234 cases out of 5,678 candidates in the last 90 days.
+{: .numeral}
+
+### Ligatures not enabled
+
+There is a version of *et-book* available upstream that includes ligatures
+(e.g. making the "ffi" in traffic one connected glyph), but I found that it
+reduces legibility, so it is not included here.

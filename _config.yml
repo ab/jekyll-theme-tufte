@@ -6,6 +6,7 @@ header: false
 subtitle: A Jekyll theme based on tufte-css
 author: Andy Brody
 description: A Jekyll theme based on tufte-css
+show_author: true
 markdown: kramdown
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 highlighter: rouge

@@ -20,7 +20,7 @@ full_width: true
   {%- assign prevyear = currentyear -%}
 {% endif %}
   <li>
-    <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> — {{ post.date | date: '%B %-d' }}</p>
+    <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> — <span style="font-style: italic">{{ post.date | date: '%B %-d' }}</span></p>
   </li>
 {%- if forloop.last %}
 </ul>
