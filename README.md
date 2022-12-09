@@ -34,13 +34,19 @@ Add this line to your Jekyll site's `Gemfile`:
 gem 'jekyll-theme-tufte'
 ```
 
-And add this line to your Jekyll site's `_config.yml`:
+And add these lines to your Jekyll site's `_config.yml`:
 
 ```yaml
 theme: jekyll-theme-tufte
+plugins:
+  - jekyll-theme-tufte
 ```
 
-And then execute:
+(Adding the theme to the plugins list is necessary if you want to use the
+custom Liquid template tags like `{% marginnote ... %}`. If you already have a
+plugins list, append `- jekyll-theme-tufte` to the list.)
+
+Then, to install all the gem dependencies, run:
 
     $ bundle
 
