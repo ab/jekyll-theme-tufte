@@ -1,10 +1,9 @@
 ---
-layout: page
+layout: page-hero
 title: jekyll-theme-tufte
 nav_title: About
 head_title: jekyll-theme-tufte
 subtitle: A modern Jekyll theme based on tufte-css
-hero_title: true
 weight: 1
 ---
 
