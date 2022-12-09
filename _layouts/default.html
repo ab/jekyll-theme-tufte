@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   {% include head.html %}
-  <body {% if page.full_width %}class="full-width"{% endif %}>
+  <body {% if page.full_width or layout.full_width %}class="full-width"{% endif %}>
     {% include header.html %}
     <article class="group">
       {{ content }}
